@@ -1,0 +1,49 @@
+﻿@using SQLiteWork.Models
+@model User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="my-3 text-end container">
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Register</a>
+        <a asp-controller="Account" asp-action="LogOff" class="btn btn-primary">LogOff</a>
+
+    </div>
+    <div class="text-center">
+    <h4>Name is @ViewBag.Name</h4>
+    <h4 class="text-center">Auth is @ViewBag.IsAuth</h4>
+    </div>
+  <div class="container my-3">
+      <form action="/Home/AddUser" method="post">
+          <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" id="exampleFormControlInput1" name="Name" class="form-control" />
+          </div>
+          <div class="mb-3">
+              <label class="form-label">User Name</label>
+              <input type="text" id="exampleFormControlInput1" name="UserName" class="form-control" />
+          </div>
+          <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" id="exampleFormControlInput1" name="Email" class="form-control" />
+          </div>
+          <div>
+              <button class="btn btn-primary" type="submit">Добавить</button>
+          </div>
+      </form>        
+  </div>
+    <div class="my-3 text-center container">
+        <a href="/Home/GetTable" class="btn btn-primary">Показать таблицу</a>
+    </div>
+</body>
+</html>
